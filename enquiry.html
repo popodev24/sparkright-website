@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quote | SparkRight Electrical Services</title>
+    <meta name="description" content="Request a free electrical quote or book a call-out from SparkRight Electrical Services in Johannesburg.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>SparkRight <span>Electrical Services</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="enquiry.html" aria-current="page">Get a Quote</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-header">
+            <h2>Request a Free Quote</h2>
+            <p>Tell us about the job and we'll get back to you with a quote or to book a call-out.</p>
+        </section>
+
+        <!-- Enquiry/quote-request form. JavaScript validation to be added in Part 3. -->
+        <section class="enquiry-form">
+            <form action="#" method="post">
+
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="job-type">Type of Job</label>
+                <select id="job-type" name="job-type" required>
+                    <option value="">-- Please select --</option>
+                    <option value="wiring">Wiring &amp; Installations</option>
+                    <option value="fault-finding">Fault-Finding</option>
+                    <option value="coc">CoC Inspection</option>
+                    <option value="emergency">Emergency Call-Out</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="location">Property Location (Suburb)</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="contact-method">Preferred Contact Method</label>
+                <select id="contact-method" name="contact-method" required>
+                    <option value="">-- Please select --</option>
+                    <option value="phone">Phone Call</option>
+                    <option value="whatsapp">WhatsApp</option>
+                    <option value="email">Email</option>
+                </select>
+
+                <label for="details">Job Details</label>
+                <textarea id="details" name="details" rows="5" placeholder="Briefly describe the electrical issue or job..."></textarea>
+
+                <button type="submit">Submit Enquiry</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SparkRight Electrical Services. All rights reserved.</p>
+        <p>Johannesburg, Gauteng | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+</body>
+</html>
