@@ -1,0 +1,40 @@
+<svg viewBox="0 0 800 1100" xmlns="http://www.w3.org/2000/svg"
+    font-family="Verdana, Arial, sans-serif">
+  <rect x="1" y="1" width="798" height="1098" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="bold">CONTACT PAGE - WIREFRAME (Low-Fidelity)</text>
+  
+  <rect x="30" y="55" width="740" height="72" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="48" y="84" font-size="13" font-weight="bold">[LOGO] SparkRight</text>
+  <text x="48" y="103" font-size="10">Electrical Services</text>
+  <text x="380" y="96" font-size="10">Home | About | Services | Get a Quote | Contact</text>
+
+  <rect x="30" y="150" width="740" height="100" fill="#f5f5f5" stroke="#333"/>
+  <text x="50" y="180" font-size="12" font-weight="bold">Contact Details</text>
+  <text x="50" y="208" font-size="10">Phone | WhatsApp | Email | Operating Hours</text>
+
+  <text x="400" y="285" text-anchor="middle" font-size="12" font-weight="bold">
+    Areas We Service (2 locations)
+  </text>
+  <rect x="30" y="305" width="355" height="180" fill="#eee" stroke="#333"/>
+  <text x="207" y="398" text-anchor="middle" font-size="10">[ MAP EMBED - Johannesburg North ]</text>
+  <rect x="415" y="305" width="355" height="180" fill="#eee" stroke="#333"/>
+  <text x="592" y="398" text-anchor="middle" font-size="10">[ MAP EMBED - Johannesburg South ]</text>
+
+  <rect x="180" y="525" width="440" height="365" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+  <text x="205" y="558" font-size="11" font-weight="bold">Send Us a Message</text>
+
+  <text x="205" y="600" font-size="10">Full Name:</text>
+  <rect x="205" y="610" width="390" height="30" fill="#fff" stroke="#333"/>
+  <text x="205" y="675" font-size="10">Email:</text>
+  <rect x="205" y="685" width="390" height="30" fill="#fff" stroke="#333"/>
+  <text x="205" y="750" font-size="10">Message:</text>
+  <rect x="205" y="760" width="390" height="80" fill="#fff" stroke="#333"/>
+  <rect x="300" y="855" width="200" height="38" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="400" y="879" text-anchor="middle" font-size="10">[ Send Message Button ]</text>
+
+  <rect x="30" y="1018" width="740" height="55" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="400" y="1051" text-anchor="middle" font-size="10">
+    Footer: copyright | Johannesburg, Gauteng | Contact link
+  </text>
+
+</svg>

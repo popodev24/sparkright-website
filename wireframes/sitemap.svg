@@ -1,0 +1,32 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" font-family="Verdana, sans-serif">
+  <rect width="800" height="400" fill="#ffffff"/>
+  <text x="400" y="25" text-anchor="middle" font-size="16" font-weight="bold">SparkRight Electrical Services - Sitemap</text>
+
+  <!-- Home -->
+  <rect x="330" y="50" width="140" height="45" fill="#0b3d91" stroke="#333"/>
+  <text x="400" y="78" text-anchor="middle" font-size="12" fill="#fff">Home (index.html)</text>
+
+  <!-- connector lines -->
+  <line x1="400" y1="95" x2="80" y2="160" stroke="#333"/>
+  <line x1="400" y1="95" x2="280" y2="160" stroke="#333"/>
+  <line x1="400" y1="95" x2="480" y2="160" stroke="#333"/>
+  <line x1="400" y1="95" x2="680" y2="160" stroke="#333"/>
+
+  <!-- child pages -->
+  <rect x="10" y="160" width="140" height="45" fill="#f2c14e" stroke="#333"/>
+  <text x="80" y="188" text-anchor="middle" font-size="11">About Us (about.html)</text>
+
+  <rect x="210" y="160" width="140" height="45" fill="#f2c14e" stroke="#333"/>
+  <text x="280" y="188" text-anchor="middle" font-size="11">Services (services.html)</text>
+
+  <rect x="410" y="160" width="140" height="45" fill="#f2c14e" stroke="#333"/>
+  <text x="480" y="181" text-anchor="middle" font-size="11">Get a Quote</text>
+  <text x="480" y="196" text-anchor="middle" font-size="10">(enquiry.html)</text>
+
+  <rect x="610" y="160" width="140" height="45" fill="#f2c14e" stroke="#333"/>
+  <text x="680" y="188" text-anchor="middle" font-size="11">Contact (contact.html)</text>
+
+  <!-- note -->
+  <text x="400" y="260" text-anchor="middle" font-size="11" fill="#555">All pages share the same header/nav and footer. Nav links every page to every other page (flat structure).</text>
+  <text x="400" y="290" text-anchor="middle" font-size="11" fill="#555">Services page links directly to the Get a Quote page as a call-to-action.</text>
+</svg>
