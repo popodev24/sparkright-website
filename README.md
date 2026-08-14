@@ -42,6 +42,7 @@ The project is being built across three parts:
 | 1–2 | Project planning, proposal approval, content/image sourcing |
 | 3–4 | HTML structure and page linking (Part 1) |
 | 5–7 | CSS styling and responsive design (Part 2) |
+
 | 8–9 | JavaScript functionality and testing (Part 3) |
 | 10 | Final testing, debugging, and submission |
 
