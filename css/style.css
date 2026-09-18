@@ -1,0 +1,475 @@
+﻿/* =========================================================
+   SparkRight Electrical Services -- style.css
+   Part 2: CSS Styling and Responsive Design
+   ========================================================= */
+
+/* ---------- 1. CSS Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+/* ---------- 2. Base Styles ---------- */
+:root {
+    --color-navy: #16283F;
+    --color-navy-light: #1F3A5C;
+    --color-amber: #F2B705;
+    --color-amber-dark: #D19E00;
+    --color-bg: #F7F8FA;
+    --color-white: #FFFFFF;
+    --color-text: #2A2E35;
+    --color-text-muted: #5C6470;
+    --color-border: #E1E4E8;
+
+    --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    --radius: 8px;
+    --shadow: 0 2px 8px rgba(22, 40, 63, 0.08);
+    --shadow-hover: 0 6px 16px rgba(22, 40, 63, 0.14);
+
+    --max-width: 75rem;
+}
+
+body {
+    font-family: var(--font-base);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* ---------- 3. Typography ---------- */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    color: var(--color-navy);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+}
+
+h1 { font-size: 1.5rem; }
+h2 { font-size: 2rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+h4 { font-size: 1.1rem; margin-bottom: 0.35rem; }
+
+p {
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+    max-width: 65ch;
+}
+
+/* ---------- 4. Header & Navigation ---------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background-color: var(--color-navy);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.logo h1 {
+    color: var(--color-white);
+    font-size: 1.3rem;
+}
+
+.logo h1 span {
+    color: var(--color-amber);
+    font-weight: 400;
+    font-size: 1rem;
+    display: block;
+}
+
+header nav ul {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+header nav a {
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.4rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+header nav a:hover,
+header nav a:focus {
+    color: var(--color-amber);
+    border-bottom-color: var(--color-amber);
+}
+
+header nav a[aria-current="page"] {
+    color: var(--color-amber);
+    border-bottom-color: var(--color-amber);
+}
+
+/* ---------- 5. Main Layout Wrapper ---------- */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 3rem 0;
+}
+
+.page-header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+}
+
+.page-header p {
+    margin: 0 auto;
+    color: var(--color-text-muted);
+}
+
+/* ---------- 6. Hero Section (Home) ---------- */
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+.hero img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.hero-text h2 {
+    font-size: 2.25rem;
+}
+
+/* ---------- 7. Buttons / CTAs ---------- */
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-amber);
+    color: var(--color-navy);
+    font-weight: 700;
+    padding: 0.85rem 1.75rem;
+    border-radius: var(--radius);
+    margin-top: 0.5rem;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--color-amber-dark);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.cta-button:focus {
+    outline: 3px solid var(--color-navy-light);
+    outline-offset: 2px;
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+/* ---------- 8. Service Cards (Home preview + Services page) ---------- */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.card,
+.service-detail {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover,
+.service-detail:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
+}
+
+.service-detail {
+    margin-bottom: 1.25rem;
+}
+
+.cta {
+    text-align: center;
+    background-color: var(--color-navy);
+    border-radius: var(--radius);
+    padding: 2.5rem 1.5rem;
+}
+
+.cta h3 {
+    color: var(--color-white);
+}
+
+/* ---------- 9. About Page ---------- */
+.history,
+.mission-vision {
+    max-width: 65ch;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.team-member {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s ease;
+}
+
+.team-member:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.team-member img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.team-member h4,
+.team-member p {
+    padding: 0 1rem;
+}
+
+.team-member p {
+    padding-bottom: 1rem;
+}
+
+/* ---------- 10. Forms (Enquiry + Contact) ---------- */
+.enquiry-form form,
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.enquiry-form label,
+.contact-form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-navy);
+    margin-top: 1rem;
+    margin-bottom: 0.35rem;
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea,
+.contact-form input,
+.contact-form textarea {
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    font-family: inherit;
+    background-color: var(--color-bg);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.enquiry-form input:focus,
+.enquiry-form select:focus,
+.enquiry-form textarea:focus,
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-amber);
+    box-shadow: 0 0 0 3px rgba(242, 183, 5, 0.25);
+}
+
+.enquiry-form button,
+.contact-form button {
+    align-self: flex-start;
+    margin-top: 1.5rem;
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    font-weight: 700;
+    padding: 0.85rem 1.75rem;
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.enquiry-form button:hover,
+.contact-form button:hover {
+    background-color: var(--color-navy-light);
+    transform: translateY(-2px);
+}
+
+.enquiry-form button:active,
+.contact-form button:active {
+    transform: translateY(0);
+}
+
+/* ---------- 11. Contact Page: Details + Service Areas ---------- */
+.contact-details p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-details a {
+    color: var(--color-amber-dark);
+    font-weight: 600;
+}
+
+.service-areas {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.location {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.location iframe {
+    border-radius: var(--radius);
+    margin-top: 0.5rem;
+}
+
+/* ---------- 12. Footer ---------- */
+footer {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 0.25rem;
+}
+
+footer a {
+    color: var(--color-amber);
+    font-weight: 600;
+}
+
+/* =========================================================
+   13. Responsive Design
+   ========================================================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .service-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main {
+        padding: 0 1.5rem;
+    }
+}
+
+/* Small tablet / large phone */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 1.25rem;
+    }
+
+    header nav ul {
+        gap: 1rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.75rem;
+    }
+
+    .team-members {
+        grid-template-columns: 1fr;
+    }
+
+    .service-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    main {
+        padding: 0 1rem;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.4rem;
+    }
+
+    .enquiry-form form,
+    .contact-form form {
+        padding: 1.25rem;
+    }
+
+    .cta-button,
+    .enquiry-form button,
+    .contact-form button {
+        width: 100%;
+        text-align: center;
+    }
+}
