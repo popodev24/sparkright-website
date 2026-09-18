@@ -90,12 +90,16 @@ All pages share the same header, navigation, and footer. The Services page also 
 - **18 September 2026** - Created `css/style.css` and linked it from all five HTML pages. Implemented CSS reset, base styles, typography scale, Flexbox/Grid layout for header, hero, service cards, and team section, visual styling with hover/focus/active states on all interactive elements, and responsive breakpoints at 1024px/768px/480px. Captured desktop, tablet, and mobile screenshots as evidence (see Screenshot Evidence above).
 
 ## References
-Pexels. [s.a.]. Electrician. [Online]. Available at: https://www.pexels.com/photo/photo-of-a-person-s-hands-cutting-a-green-cable-7285975/ [Accessed: 14 August 2026].
+This project follows the Part 1 and Part 2 module briefs (The Independent Institute of Education, 2026a; 2026b) for structure and CSS/responsive requirements. Hero and team images are free-license stock photography sourced from Pexels (Pexels, n.d.a; n.d.b).
 
-Pexels. [s.a.]. Electrical panel. [Online]. Available at: https://www.pexels.com/photo/electrical-wires-connected-on-conductors-7541342/ [Accessed: 14 August 2026].
+The Independent Institute of Education (Pty) Ltd. 2026a. WEDE5020: Web Development (Introduction) - Part 1: Building the Foundation, Project Initiation and Planning. Unpublished module manual. Johannesburg: IIE Rosebank College.
 
-The Independent Institute of Education (Pty) Ltd. 2026. WEDE5020: Web Development (Introduction) - Part 1: Building the Foundation, Project Initiation and Planning. Unpublished module manual. Johannesburg: IIE Rosebank College.
+The Independent Institute of Education (Pty) Ltd. 2026b. WEDE5020: Web Development (Introduction) - Part 2: Designing the Visuals, CSS Styling and Responsive Design. Unpublished module manual. Johannesburg: IIE Rosebank College.
 
-The Independent Institute of Education (Pty) Ltd. 2026. WEDE5020: Web Development (Introduction) - Part 2: Designing the Visuals, CSS Styling and Responsive Design. Unpublished module manual. Johannesburg: IIE Rosebank College.
+Pexels. n.d.a. Electrician. [Online]. Available at: https://www.pexels.com/photo/photo-of-a-person-s-hands-cutting-a-green-cable-7285975/ [Accessed: 14 August 2026].
+
+Pexels. n.d.b. Electrical panel. [Online]. Available at: https://www.pexels.com/photo/electrical-wires-connected-on-conductors-7541342/ [Accessed: 14 August 2026].
+
+
 
 
