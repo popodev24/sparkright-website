@@ -115,7 +115,7 @@ JavaScript files in `js/`:
 
 ### 1. Interactive Elements and Dynamic Content
 
-- **Gallery with lightbox:** the About page shows thumbnail images that open full-size in a lightbox. It supports keyboard control (Esc to close, Left and Right arrows to move), click-outside-to-close and descriptive alt text.
+- **Gallery with lightbox:** the About page shows thumbnail images that open full-size in a lightbox. It supports keyboard control (Esc to close, Left and Right arrows to move), click-outside-to-close and descriptive alt text. The photographs are the free-license Pexels images credited in the References (Pexels, n.d.a; n.d.b).
 - **Accordion:** FAQ items expand and collapse on click so visitors only see the answers they need.
 - **Dynamic content and search:** the services list is rendered by JavaScript, with live search, a category filter and sorting, so results update without reloading the page.
 - **Interactive map:** the Contact page uses Leaflet (Leaflet, n.d.) with Esri World Street Map tiles (Esri, n.d.), showing both branches with clickable markers. No API key is required.
@@ -125,7 +125,7 @@ JavaScript files in `js/`:
 
 - **On-page:** every page has a unique `<title>`, meta description and meta keywords; headings follow a single `<h1>` then `<h2>` and `<h3>` structure; images have descriptive alt text; internal links connect all five pages; the layout is mobile-friendly (Google Search Central, 2026).
 - **Technical:** `robots.txt` points crawlers to `sitemap.xml`, and canonical links on every page point to the live Vercel URL.
-- **Page speed:** images use `srcset`, `sizes`, explicit dimensions and lazy loading, and no JavaScript frameworks are used.
+- **Page speed:** images use `srcset`, `sizes`, explicit dimensions and lazy loading, following responsive image guidance (Mozilla Developer Network, 2026), and no JavaScript frameworks are used.
 - **Off-page and local SEO:** as a coursework site on a free host it cannot build real backlinks. In a live project the plan would be a Google Business Profile for Johannesburg, listings in local directories, and sharing completed jobs on social media.
 
 ### 3. Forms and Validation
