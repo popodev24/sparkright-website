@@ -82,12 +82,36 @@
             </form>
         </section>
 
-    </main>
+      <section class="p3-section" id="contact-form-section">
+    <h2>Send Us a Message</h2>
+    <form class="p3-form" id="contact-form" action="#" method="post" novalidate>
+      <div class="p3-field"><label for="con-name">Full name</label>
+        <input type="text" id="con-name" name="name" autocomplete="name" required maxlength="60">
+        <span class="p3-error" id="con-name-error" aria-live="polite"></span></div>
+      <div class="p3-field"><label for="con-email">Email address</label>
+        <input type="email" id="con-email" name="email" autocomplete="email" required>
+        <span class="p3-error" id="con-email-error" aria-live="polite"></span></div>
+      <div class="p3-field"><label for="con-phone">Phone number (optional)</label>
+        <input type="tel" id="con-phone" name="phone" autocomplete="tel" placeholder="082 123 4567">
+        <span class="p3-error" id="con-phone-error" aria-live="polite"></span></div>
+      <div class="p3-field"><label for="con-type">Type of message</label>
+        <select id="con-type" name="type" required><option value="">Choose one</option><option>General question</option><option>Feedback</option><option>Complaint</option><option>Partnership</option></select>
+        <span class="p3-error" id="con-type-error" aria-live="polite"></span></div>
+      <div class="p3-field"><label for="con-message">Your message</label>
+        <textarea id="con-message" name="message" rows="6" required minlength="20" maxlength="1000"></textarea>
+        <small id="con-message-count"></small>
+        <span class="p3-error" id="con-message-error" aria-live="polite"></span></div>
+      <button type="submit" class="p3-btn">Prepare email</button>
+    </form>
+    <div class="p3-result" id="contact-result" role="status" aria-live="polite" hidden></div>
+  </section>
+</main>
 
     <footer>
         <p>&copy; 2026 SparkRight Electrical Services. All rights reserved.</p>
         <p>Johannesburg, Gauteng | <a href="contact.html">Contact Us</a></p>
     </footer>
 
+  <script src="js/forms.js" defer></script>
 </body>
 </html>
