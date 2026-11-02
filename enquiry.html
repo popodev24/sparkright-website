@@ -73,12 +73,54 @@
             </form>
         </section>
 
-    </main>
+      <section class="p3-section" id="enquiry-form-section">
+    <h2>Request a Quote</h2>
+    <form class="p3-form" id="enquiry-form" action="#" method="post" novalidate>
+      <div class="p3-field"><label for="enq-name">Full name</label>
+        <input type="text" id="enq-name" name="name" autocomplete="name" required maxlength="60">
+        <span class="p3-error" id="enq-name-error" aria-live="polite"></span></div>
+      <div class="p3-field"><label for="enq-email">Email address</label>
+        <input type="email" id="enq-email" name="email" autocomplete="email" required>
+        <span class="p3-error" id="enq-email-error" aria-live="polite"></span></div>
+      <div class="p3-field"><label for="enq-phone">Phone number</label>
+        <input type="tel" id="enq-phone" name="phone" autocomplete="tel" placeholder="082 123 4567" required>
+        <span class="p3-error" id="enq-phone-error" aria-live="polite"></span></div>
+      <div class="p3-field"><label for="enq-service">Service needed</label>
+        <select id="enq-service" name="service" required><option value="">Choose a service</option></select>
+        <span class="p3-error" id="enq-service-error" aria-live="polite"></span></div>
+      <fieldset class="p3-field p3-radios" id="enq-property">
+        <legend>Property type</legend>
+        <label><input type="radio" name="property" value="home"> Home</label>
+        <label><input type="radio" name="property" value="business"> Business</label>
+        <span class="p3-error" id="enq-property-error" aria-live="polite"></span>
+      </fieldset>
+      <div class="p3-field"><label for="enq-date">Preferred date</label>
+        <input type="date" id="enq-date" name="date" required>
+        <span class="p3-error" id="enq-date-error" aria-live="polite"></span></div>
+      <div class="p3-field"><label for="enq-location">Suburb or area</label>
+        <input type="text" id="enq-location" name="location" required maxlength="80" placeholder="e.g. Randburg">
+        <span class="p3-error" id="enq-location-error" aria-live="polite"></span></div>
+      <div class="p3-field"><label for="enq-method">Preferred contact method</label>
+        <select id="enq-method" name="method" required><option value="">Choose one</option><option value="phone">Phone call</option><option value="whatsapp">WhatsApp</option><option value="email">Email</option></select>
+        <span class="p3-error" id="enq-method-error" aria-live="polite"></span></div>
+      <div class="p3-field"><label for="enq-message">Describe the job</label>
+        <textarea id="enq-message" name="message" rows="5" required minlength="10" maxlength="500"></textarea>
+        <small id="enq-message-count"></small>
+        <span class="p3-error" id="enq-message-error" aria-live="polite"></span></div>
+      <div class="p3-field"><label><input type="checkbox" id="enq-consent" name="consent"> I agree to be contacted about this enquiry.</label>
+        <span class="p3-error" id="enq-consent-error" aria-live="polite"></span></div>
+      <button type="submit" class="p3-btn">Get my estimate</button>
+    </form>
+    <div class="p3-result" id="enquiry-result" role="status" aria-live="polite" hidden></div>
+  </section>
+</main>
 
     <footer>
         <p>&copy; 2026 SparkRight Electrical Services. All rights reserved.</p>
         <p>Johannesburg, Gauteng | <a href="contact.html">Contact Us</a></p>
     </footer>
 
+  <script src="js/services-data.js" defer></script>
+  <script src="js/forms.js" defer></script>
 </body>
 </html>
