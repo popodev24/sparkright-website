@@ -169,10 +169,30 @@
   var conForm = document.getElementById("contact-form");
   if (conForm) {
     counter("con-message", "con-message-count", 1000);
+    ["con-name", "con-email", "con-phone", "con-type", "con-message"].forEach(function (id) {
+      var field = document.getElementById(id);
+      if (!field) return;
+      field.addEventListener("focusout", function () { check(id); });
+      field.addEventListener("input", function () { if (field.classList.contains("invalid")) check(id); });
+      field.addEventListener("change", function () { check(id); });
+    });
     conForm.addEventListener("submit", function (e) {
       e.preventDefault();
       var box = document.getElementById("contact-result");
       var submitBtn = conForm.querySelector('[type="submit"]');
+      var conIds = ["con-name", "con-email", "con-phone", "con-type", "con-message"];
+      var firstBad = null;
+      conIds.forEach(function (id) { if (!check(id) && !firstBad) firstBad = document.getElementById(id); });
+      if (box) { box.hidden = false; box.classList.remove("is-error"); box.scrollIntoView({ behavior: "smooth", block: "nearest" }); }
+      if (firstBad) {
+        if (box) {
+          box.textContent = "";
+          box.classList.add("is-error");
+          box.appendChild(el("p", "", "Please fix the highlighted fields and try again."));
+        }
+        firstBad.focus();
+        return;
+      }
       var subject = "[" + val("con-type") + "] Message from " + val("con-name");
       var payload = {
         name: val("con-name"),
