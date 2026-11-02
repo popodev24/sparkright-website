@@ -1,11 +1,11 @@
-﻿# SparkRight Electrical Services - Website Project
+# SparkRight Electrical Services - Website Project
 
 ## Student Information
 - **Name:** Mpho Mbele
 - **Student Number:** ST10509066
 - **Group:** 1
 - **Module:** Web Development (WEDE5020)
-- **Institution:** Rosebank International
+- **Institution:** IIE Rosebank College
 
 ## Project Overview
 This repository contains the website build for SparkRight Electrical Services, a fictional residential and small commercial electrical contracting business based in Johannesburg, created as the target organisation for this assignment. SparkRight was founded in 2021 by a qualified electrician and has grown through word-of-mouth referrals, completing wiring, fault-finding, and Certificate of Compliance (CoC) work for homeowners and small businesses across Gauteng.
@@ -13,8 +13,8 @@ This repository contains the website build for SparkRight Electrical Services, a
 The project is being built across three parts:
 
 - **Part 1: HTML foundation** - project planning, content research, sitemap, wireframes, and static HTML structure.
-- **Part 2: CSS styling** - responsive, branded visual design (current stage).
-- **Part 3: JavaScript functionality** - form validation and interactivity.
+- **Part 2: CSS styling** - responsive, branded visual design.
+- **Part 3: JavaScript functionality and SEO** - interactive elements, dynamic content, form validation, SEO, security headers and deployment (current stage).
 
 ## Website Goals and Objectives
 **Primary Goal:** Generate qualified leads by making it easy for potential customers to request a quote or book a call-out online, reducing reliance on word-of-mouth alone.
@@ -89,8 +89,60 @@ All pages share the same header, navigation, and footer. The Services page also 
 - **14 August 2026** - SparkRight Electrical Services approved by lecturer as the chosen organisation. Sitemap, wireframes, file structure, and initial HTML pages for Part 1 completed. Content research and sourcing completed (original text content + free-license images logged).
 - **18 September 2026** - Created `css/style.css` and linked it from all five HTML pages. Implemented CSS reset, base styles, typography scale, Flexbox/Grid layout for header, hero, service cards, and team section, visual styling with hover/focus/active states on all interactive elements, and responsive breakpoints at 1024px/768px/480px. Captured desktop, tablet, and mobile screenshots as evidence (see Screenshot Evidence above).
 
+- **2 November 2026 - Part 2 feedback: verifiable Git commit history.** Feedback asked for verifiable commit history. All Part 3 work was committed in small, single-purpose commits with descriptive messages and pushed to GitHub as each feature was finished, instead of one large upload. The commit history on the `main` branch (25 commits in total) now shows each feature separately, for example `Add enquiry form with JavaScript validation, cost estimate and availability response`, `Replace Google Maps iframes with interactive Leaflet map showing both branches` and `Add security headers (vercel.json) and rel=noopener on external links`. Git author details were set to my verified GitHub email so every commit is attributed to my account (`popodev24`).
+- **2 November 2026 - Part 2 feedback: stronger responsive image techniques** (commits `912d9a5` and `98819cb`). Generated 480px, 800px and 1200px versions of the hero and both team photos from the originals (the hero image dropped from about 2.3 MB to about 124 KB at 1200px). Replaced the plain `<img>` tags with `srcset` and `sizes` so each device downloads an appropriately sized file. Added explicit `width` and `height` attributes to prevent layout shift. Added `loading="lazy"` and `decoding="async"` to below-the-fold images and `fetchpriority="high"` to the hero image. Added `img { max-width: 100%; height: auto; }` to `css/style.css` so the images stay fluid. Files: `index.html`, `about.html`, `css/style.css`, `images/`.
+- **2 November 2026 - Technical SEO** (commits `52c07fb`, `da2fc0e`, `9cef7fd`). Added unique `<title>` tags, meta descriptions, meta keywords and canonical links to all five pages. Created `robots.txt` and `sitemap.xml`, then updated them, the canonical links and the form recipient with the live Vercel URL. Files: all `.html` files, `robots.txt`, `sitemap.xml`.
+- **2 November 2026 - Dynamic content and interactivity** (commit `5f821c6`). Added a JavaScript-rendered services list with live search, category filtering and sorting, plus an accordion (FAQ). Files: `services.html`, `js/`, `css/style.css`.
+- **2 November 2026 - Gallery with lightbox** (commit `83edef7`). Added an image gallery to the About page that opens full-size images in an accessible lightbox with keyboard controls (Esc, Left and Right arrows) and click-outside-to-close. Files: `about.html`, `js/lightbox.js`, `css/style.css`.
+- **2 November 2026 - Interactive map** (commits `2fd4b6c`, `980f3db`). Replaced the Google Maps iframes with an interactive Leaflet map showing both branches, then switched the tiles to Esri World Street Map because it needs no API key. Files: `contact.html`, `js/`.
+- **2 November 2026 - Forms and validation** (commits `da68b3d`, `1c11afa`, `80434d3`, `b500f62`, `d5ab9e4`). Built the enquiry form (validated input, calculated cost estimate and availability response) and the contact form (validated input, compiled email). Upgraded the contact form to submit asynchronously with `fetch()` (AJAX) through FormSubmit, with a sending indicator, success and error messages and a `mailto:` fallback. Fixed an HTTP 405 error by preventing the default form submit. Added clean responsive styles for inputs, labels and buttons. Files: `enquiry.html`, `contact.html`, `js/forms.js`, `css/style.css`.
+- **2 November 2026 - Security** (commit `1d43f00`). Added security headers in `vercel.json` (X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy) and `rel="noopener noreferrer"` on all external links that open in a new tab. Files: `vercel.json`, all `.html` files.
+- **2 November 2026 - Deployment and documentation.** Deployed the site on Vercel at https://sparkright-website.vercel.app, finalised the README (Part 3 section, changelog, references) and removed a stray file created by a mistyped command (commit `2cbca8d`).
+
+
+---
+
+## Part 3 Details - Enhancing Functionality and SEO
+
+Part 3 adds JavaScript functionality, SEO, validated forms, security headers and deployment (The Independent Institute of Education, 2026c). The live site is at https://sparkright-website.vercel.app.
+
+JavaScript files in `js/`:
+
+- `js/forms.js`
+- `js/lightbox.js`
+- `js/map.js`
+- `js/services.js`
+
+### 1. Interactive Elements and Dynamic Content
+
+- **Gallery with lightbox:** the About page shows thumbnail images that open full-size in a lightbox. It supports keyboard control (Esc to close, Left and Right arrows to move), click-outside-to-close and descriptive alt text.
+- **Accordion:** FAQ items expand and collapse on click so visitors only see the answers they need.
+- **Dynamic content and search:** the services list is rendered by JavaScript, with live search, a category filter and sorting, so results update without reloading the page.
+- **Interactive map:** the Contact page uses Leaflet (Leaflet, n.d.) with Esri World Street Map tiles (Esri, n.d.), showing both branches with clickable markers. No API key is required.
+- **Animations and transitions:** CSS transitions and keyframe animations are used for hover states, accordion panels and the lightbox.
+
+### 2. Search Engine Optimisation (SEO)
+
+- **On-page:** every page has a unique `<title>`, meta description and meta keywords; headings follow a single `<h1>` then `<h2>` and `<h3>` structure; images have descriptive alt text; internal links connect all five pages; the layout is mobile-friendly (Google Search Central, 2026).
+- **Technical:** `robots.txt` points crawlers to `sitemap.xml`, and canonical links on every page point to the live Vercel URL.
+- **Page speed:** images use `srcset`, `sizes`, explicit dimensions and lazy loading, and no JavaScript frameworks are used.
+- **Off-page and local SEO:** as a coursework site on a free host it cannot build real backlinks. In a live project the plan would be a Google Business Profile for Johannesburg, listings in local directories, and sharing completed jobs on social media.
+
+### 3. Forms and Validation
+
+- **Enquiry form (`enquiry.html`):** collects name, contact details, service, property type, area, date and contact method. JavaScript validates every field (South African phone format, email format, date not in the past, text length) and shows inline error messages, then displays an estimated cost and availability response.
+- **Contact form (`contact.html`):** collects contact details, message type and message. After validation, the message is compiled into an email and sent asynchronously with `fetch()` (AJAX) through FormSubmit (FormSubmit, n.d.). It shows a sending state, a success message and an error message, with a `mailto:` button as a fallback.
+
+### 4. Security and Deployment
+
+- `vercel.json` sets X-Frame-Options, X-Content-Type-Options, Referrer-Policy and Permissions-Policy headers.
+- External links that open in a new tab use `rel="noopener noreferrer"`.
+- The site is deployed on Vercel, with the source code on GitHub at https://github.com/popodev24/sparkright-website.
+
+---
+
 ## References
-This project follows the Part 1 and Part 2 module briefs (The Independent Institute of Education, 2026a; 2026b) for structure and CSS/responsive requirements. Hero and team images are free-license stock photography sourced from Pexels (Pexels, n.d.a; n.d.b).
+This project follows the Part 1 and Part 2 module briefs (The Independent Institute of Education, 2026a; 2026b; 2026c) for structure and CSS/responsive requirements. Hero and team images are free-license stock photography sourced from Pexels (Pexels, n.d.a; n.d.b).
 
 The Independent Institute of Education (Pty) Ltd. 2026a. WEDE5020: Web Development (Introduction) - Part 1: Building the Foundation, Project Initiation and Planning. Unpublished module manual. Johannesburg: IIE Rosebank College.
 
@@ -100,57 +152,14 @@ Pexels. n.d.a. Electrician. [Online]. Available at: https://www.pexels.com/photo
 
 Pexels. n.d.b. Electrical panel. [Online]. Available at: https://www.pexels.com/photo/electrical-wires-connected-on-conductors-7541342/ [Accessed: 14 August 2026].
 
+The Independent Institute of Education (Pty) Ltd. 2026c. WEDE5020: Web Development (Introduction) - Part 3: Enhancing Functionality and SEO. Unpublished module manual. Johannesburg: IIE Rosebank College.
 
+Esri. n.d. World Street Map. [Online]. Available at: https://www.arcgis.com/home/item.html?id=3b93337983e9436f8db950e38a8629af [Accessed: 2 November 2026].
 
+FormSubmit. n.d. FormSubmit documentation. [Online]. Available at: https://formsubmit.co/ [Accessed: 2 November 2026].
 
+Google Search Central. 2026. SEO Starter Guide. [Online]. Available at: https://developers.google.com/search/docs [Accessed: 2 November 2026].
 
+Leaflet. n.d. Leaflet: an open-source JavaScript library for interactive maps. [Online]. Available at: https://leafletjs.com/ [Accessed: 2 November 2026].
 
-
----
-
-## Part 3 — Enhancements, SEO, Forms & Security
-
-### 1. Interactive Elements & JavaScript Enhancements
-- **Gallery & Accessible Lightbox Viewer (js/lightbox.js):** Built a native <dialog> image viewer with smooth transitions. Features accessible controls, keyboard navigation (Left/Right arrow keys, Escape), and backdrop-click dismissal.
-- **Dynamic Content & Filtering (js/search.js):** Added dynamic content search/filtering for services and project listings, allowing real-time query matching without full page reloads.
-- **Interactive Map Integration:** Integrated interactive map containers with location pin fallbacks on contact and location sections.
-
-### 2. Search Engine Optimization (SEO)
-- **On-Page SEO:**
-  - Standardized <title> tag naming patterns across all pages (Page Name | SparkRight Electrical Solutions).
-  - Added target-keyword meta descriptions (<meta name="description">) and meta keywords across every HTML page.
-  - Optimized heading hierarchy (<h1> down to <h3>) for structural search engine readability.
-  - Expanded descriptive lt attributes on all images and defined explicit width and height properties to improve Cumulative Layout Shift (CLS).
-- **Off-Page & Technical SEO:**
-  - Created obots.txt specifying crawler instructions and pointing directly to the sitemap.
-  - Created sitemap.xml mapping canonical URLs for indexing across all site routes.
-  - Included canonical link tags (<link rel="canonical" href="...">) across all HTML documents.
-
-### 3. Form Validation & AJAX Processing
-- **Enquiry Form (enquiry.html):** Validates required user inputs and dynamically outputs calculated instant responses regarding service cost estimates, booking timelines, and staff availability.
-- **Contact Form (contact.html & js/forms.js):** Fully integrated background asynchronous submission using etch() via FormSubmit. Displays on-page status indicators (Sending, Success message with customer name, and Error messaging) with an interactive mailto: fallback button if network issues arise.
-
-### 4. Security & Deployment Headers
-- Configured security headers inside ercel.json (X-Frame-Options: DENY, X-Content-Type-Options: nosniff, Referrer-Policy: strict-origin-when-cross-origin, Permissions-Policy).
-- Enforced el="noopener noreferrer" attributes across all external hyperlinks (	arget="_blank").
-
----
-
-## Part 3 Changelog
-
-| Date | Category | Summary of Change / Feedback Correction | Impact / Files Affected |
-| :--- | :--- | :--- | :--- |
-| **2026-11-01** | *Part 2 Feedback* | Fixed structural alignment issues on service cards and corrected color contrast ratios to meet WCAG AA standards. | css/style.css |
-| **2026-11-01** | *Part 2 Feedback* | Corrected responsive navigation breakpoint layout on mobile devices. | css/style.css, js/main.js |
-| **2026-11-02** | *Technical SEO* | Set canonical domain URLs across all .html pages, obots.txt, and sitemap.xml. | *.html, obots.txt, sitemap.xml |
-| **2026-11-02** | *Security* | Added ercel.json security headers and appended el="noopener noreferrer" to all target external links. | ercel.json, *.html |
-| **2026-11-02** | *Interactivity* | Implemented zero-dependency modal lightbox viewer for image gallery on About page. | js/lightbox.js, css/style.css, bout.html |
-| **2026-11-02** | *Forms & AJAX* | Implemented asynchronous AJAX submission via etch() API with response feedback and fallback mailto handling. | js/forms.js |
-
----
-
-## References & Bibliography
-1. Mozilla Developer Network (MDN). (2026). *HTMLDialogElement & Web Accessibility Standards*. Available at: https://developer.mozilla.org/
-2. FormSubmit API. (2026). *FormSubmit Documentation & AJAX Endpoints*. Available at: https://formsubmit.co/
-3. Google Search Central. (2026). *SEO Starter Guide: Sitemap.xml & Robots.txt Best Practices*. Available at: https://developers.google.com/search/docs
-4. WebAIM. (2026). *Contrast and Color Accessibility Criteria*. Available at: https://webaim.org/
+Mozilla Developer Network. 2026. Responsive images. [Online]. Available at: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_images [Accessed: 2 November 2026].
