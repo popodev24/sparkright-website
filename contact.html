@@ -8,6 +8,7 @@
   <meta name="keywords" content="contact electrician, SparkRight contact, electrician near me, Johannesburg service areas, Sandton Soweto Randburg electrician">
   <link rel="canonical" href="https://sparkright-website.vercel.app/contact.html">
     <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 <body>
 
@@ -46,25 +47,11 @@
         <section class="service-areas">
             <h3>Areas We Service</h3>
 
-            <article class="location">
-                <h4>Johannesburg North (Sandton / Randburg)</h4>
-                <!-- Placeholder map embed - replace src with a real Google Maps embed link -->
-                <iframe
-                    title="Map showing Johannesburg North service area"
-                    src="https://www.google.com/maps?q=Sandton,Johannesburg&output=embed"
-                    width="100%" height="250" style="border:0;" loading="lazy">
-                </iframe>
-            </article>
-
-            <article class="location">
-                <h4>Johannesburg South (Rosettenville / Southgate)</h4>
-                <!-- Placeholder map embed - replace src with a real Google Maps embed link -->
-                <iframe
-                    title="Map showing Johannesburg South service area"
-                    src="https://www.google.com/maps?q=Rosettenville,Johannesburg&output=embed"
-                    width="100%" height="250" style="border:0;" loading="lazy">
-                </iframe>
-            </article>
+            <div id="map" role="region" aria-label="Interactive map showing SparkRight service areas in Johannesburg North and South"></div>
+            <ul class="location-list">
+                <li><strong>Johannesburg North</strong> (Sandton / Randburg)</li>
+                <li><strong>Johannesburg South</strong> (Rosettenville / Southgate)</li>
+            </ul>
         </section>
 
         <!-- Simple contact form as an alternative to phone/WhatsApp -->
@@ -115,5 +102,7 @@
     </footer>
 
   <script src="js/forms.js" defer></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/map.js"></script>
 </body>
 </html>
