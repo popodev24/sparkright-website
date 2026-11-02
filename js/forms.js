@@ -169,65 +169,71 @@
   var conForm = document.getElementById("contact-form");
   if (conForm) {
     counter("con-message", "con-message-count", 1000);
-    wire(conForm, ["con-name", "con-email", "con-phone", "con-type", "con-message"],
-      document.getElementById("contact-result"),
-      function (box) {
-        var submitBtn = conForm.querySelector('[type="submit"]');
-        var subject = "[" + val("con-type") + "] Message from " + val("con-name");
-        var payload = {
-          name: val("con-name"),
-          email: val("con-email"),
-          phone: val("con-phone") || "not provided",
-          message_type: val("con-type"),
-          message: val("con-message"),
-          _subject: subject,
-          _template: "table",
-          _captcha: "false"
-        };
+    conForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var box = document.getElementById("contact-result");
+      var submitBtn = conForm.querySelector('[type="submit"]');
+      var subject = "[" + val("con-type") + "] Message from " + val("con-name");
+      var payload = {
+        name: val("con-name"),
+        email: val("con-email"),
+        phone: val("con-phone") || "not provided",
+        message_type: val("con-type"),
+        message: val("con-message"),
+        _subject: subject,
+        _template: "table",
+        _captcha: "false"
+      };
 
-        function mailtoFallback() {
-          var body = "Name: " + payload.name + "\nEmail: " + payload.email +
-            "\nPhone: " + payload.phone + "\nType: " + payload.message_type + "\n\n" + payload.message;
-          var a = el("a", "p3-btn", "Send with your email app instead");
-          a.href = "mailto:" + RECIPIENT + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-          return a;
-        }
+      function mailtoFallback() {
+        var body = "Name: " + payload.name + "\nEmail: " + payload.email +
+          "\nPhone: " + payload.phone + "\nType: " + payload.message_type + "\n\n" + payload.message;
+        var a = el("a", "p3-btn", "Send with your email app instead");
+        a.href = "mailto:" + RECIPIENT + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        return a;
+      }
 
+      if (box) {
         box.textContent = "";
         box.appendChild(el("p", "", "Sending your message..."));
-        if (submitBtn) submitBtn.disabled = true;
+      }
+      if (submitBtn) submitBtn.disabled = true;
 
-        fetch("https://formsubmit.co/ajax/" + RECIPIENT, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify(payload)
+      fetch("https://formsubmit.co/ajax/" + RECIPIENT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(payload)
+      })
+        .then(function (res) {
+          return res.json().then(function (data) { return { ok: res.ok, data: data }; });
         })
-          .then(function (res) {
-            return res.json().then(function (data) { return { ok: res.ok, data: data }; });
-          })
-          .then(function (r) {
-            box.textContent = "";
-            if (r.ok && String(r.data.success) === "true") {
+        .then(function (r) {
+          if (box) box.textContent = "";
+          if (r.ok && String(r.data.success) === "true") {
+            if (box) {
               box.classList.remove("is-error");
               box.appendChild(el("h3", "", "Thank you, " + payload.name.split(" ")[0] + "! Your message has been sent"));
               box.appendChild(el("p", "", "We have received your " + payload.message_type.toLowerCase() + " message and will reply to " + payload.email + " within one working day."));
-              conForm.reset();
-              var c = document.getElementById("con-message-count");
-              if (c) c.textContent = "0 / 1000 characters";
-            } else {
-              throw new Error(r.data && r.data.message ? r.data.message : "Send failed");
             }
-          })
-          .catch(function () {
+            conForm.reset();
+            var c = document.getElementById("con-message-count");
+            if (c) c.textContent = "0 / 1000 characters";
+          } else {
+            throw new Error(r.data && r.data.message ? r.data.message : "Send failed");
+          }
+        })
+        .catch(function () {
+          if (box) {
             box.textContent = "";
             box.classList.add("is-error");
             box.appendChild(el("h3", "", "We could not send your message"));
             box.appendChild(el("p", "", "Please check your internet connection and try again, or send it with your email app."));
             box.appendChild(mailtoFallback());
-          })
-          .then(function () {
-            if (submitBtn) submitBtn.disabled = false;
-          });
-      });
+          }
+        })
+        .then(function () {
+          if (submitBtn) submitBtn.disabled = false;
+        });
+    });
   }
 })();
