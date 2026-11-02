@@ -103,3 +103,54 @@ Pexels. n.d.b. Electrical panel. [Online]. Available at: https://www.pexels.com/
 
 
 
+
+
+
+---
+
+## Part 3 — Enhancements, SEO, Forms & Security
+
+### 1. Interactive Elements & JavaScript Enhancements
+- **Gallery & Accessible Lightbox Viewer (js/lightbox.js):** Built a native <dialog> image viewer with smooth transitions. Features accessible controls, keyboard navigation (Left/Right arrow keys, Escape), and backdrop-click dismissal.
+- **Dynamic Content & Filtering (js/search.js):** Added dynamic content search/filtering for services and project listings, allowing real-time query matching without full page reloads.
+- **Interactive Map Integration:** Integrated interactive map containers with location pin fallbacks on contact and location sections.
+
+### 2. Search Engine Optimization (SEO)
+- **On-Page SEO:**
+  - Standardized <title> tag naming patterns across all pages (Page Name | SparkRight Electrical Solutions).
+  - Added target-keyword meta descriptions (<meta name="description">) and meta keywords across every HTML page.
+  - Optimized heading hierarchy (<h1> down to <h3>) for structural search engine readability.
+  - Expanded descriptive lt attributes on all images and defined explicit width and height properties to improve Cumulative Layout Shift (CLS).
+- **Off-Page & Technical SEO:**
+  - Created obots.txt specifying crawler instructions and pointing directly to the sitemap.
+  - Created sitemap.xml mapping canonical URLs for indexing across all site routes.
+  - Included canonical link tags (<link rel="canonical" href="...">) across all HTML documents.
+
+### 3. Form Validation & AJAX Processing
+- **Enquiry Form (enquiry.html):** Validates required user inputs and dynamically outputs calculated instant responses regarding service cost estimates, booking timelines, and staff availability.
+- **Contact Form (contact.html & js/forms.js):** Fully integrated background asynchronous submission using etch() via FormSubmit. Displays on-page status indicators (Sending, Success message with customer name, and Error messaging) with an interactive mailto: fallback button if network issues arise.
+
+### 4. Security & Deployment Headers
+- Configured security headers inside ercel.json (X-Frame-Options: DENY, X-Content-Type-Options: nosniff, Referrer-Policy: strict-origin-when-cross-origin, Permissions-Policy).
+- Enforced el="noopener noreferrer" attributes across all external hyperlinks (	arget="_blank").
+
+---
+
+## Part 3 Changelog
+
+| Date | Category | Summary of Change / Feedback Correction | Impact / Files Affected |
+| :--- | :--- | :--- | :--- |
+| **2026-11-01** | *Part 2 Feedback* | Fixed structural alignment issues on service cards and corrected color contrast ratios to meet WCAG AA standards. | css/style.css |
+| **2026-11-01** | *Part 2 Feedback* | Corrected responsive navigation breakpoint layout on mobile devices. | css/style.css, js/main.js |
+| **2026-11-02** | *Technical SEO* | Set canonical domain URLs across all .html pages, obots.txt, and sitemap.xml. | *.html, obots.txt, sitemap.xml |
+| **2026-11-02** | *Security* | Added ercel.json security headers and appended el="noopener noreferrer" to all target external links. | ercel.json, *.html |
+| **2026-11-02** | *Interactivity* | Implemented zero-dependency modal lightbox viewer for image gallery on About page. | js/lightbox.js, css/style.css, bout.html |
+| **2026-11-02** | *Forms & AJAX* | Implemented asynchronous AJAX submission via etch() API with response feedback and fallback mailto handling. | js/forms.js |
+
+---
+
+## References & Bibliography
+1. Mozilla Developer Network (MDN). (2026). *HTMLDialogElement & Web Accessibility Standards*. Available at: https://developer.mozilla.org/
+2. FormSubmit API. (2026). *FormSubmit Documentation & AJAX Endpoints*. Available at: https://formsubmit.co/
+3. Google Search Central. (2026). *SEO Starter Guide: Sitemap.xml & Robots.txt Best Practices*. Available at: https://developers.google.com/search/docs
+4. WebAIM. (2026). *Contrast and Color Accessibility Criteria*. Available at: https://webaim.org/
