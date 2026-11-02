@@ -34,6 +34,34 @@
         </section>
 
         <!-- Each service listed as its own section for clarity and easy CSS styling later -->
+        <section class="service-controls" aria-label="Search and filter services">
+            <div>
+                <label for="service-search">Search services</label>
+                <input type="search" id="service-search" placeholder="e.g. CoC, fault, wiring">
+            </div>
+            <div>
+                <label for="service-category">Category</label>
+                <select id="service-category">
+                    <option value="all">All services</option>
+                    <option value="installations">Installations</option>
+                    <option value="diagnostics">Diagnostics</option>
+                    <option value="compliance">Compliance</option>
+                    <option value="emergency">Emergency</option>
+                </select>
+            </div>
+            <div>
+                <label for="service-sort">Sort by</label>
+                <select id="service-sort">
+                    <option value="default">Default order</option>
+                    <option value="name">Name (A-Z)</option>
+                    <option value="price-asc">Price (low to high)</option>
+                    <option value="price-desc">Price (high to low)</option>
+                </select>
+            </div>
+            <p id="service-count" aria-live="polite"></p>
+        </section>
+
+        <div id="service-list">
         <section class="service-detail">
             <h3>Wiring &amp; Installations</h3>
             <p>New wiring, plug points, lighting circuits and distribution board (DB) installations for
@@ -58,6 +86,7 @@
             <p>Available for urgent electrical faults. Indicative pricing: standard call-out fee plus an
                after-hours surcharge.</p>
         </section>
+        </div>
 
         <!-- Call to action linking through to the enquiry form -->
         <section class="cta">
@@ -72,5 +101,6 @@
         <p>Johannesburg, Gauteng | <a href="contact.html">Contact Us</a></p>
     </footer>
 
+  <script src="js/services.js" defer></script>
 </body>
 </html>

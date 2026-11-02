@@ -482,3 +482,16 @@ img { max-width: 100%; height: auto; display: block; }
 #map { height: 400px; width: 100%; border-radius: 8px; }
 @media (max-width: 600px) { #map { height: 300px; } }
 .location-list { list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; }
+/* Services: search, filter and accordion (Part 3) */
+.service-controls { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; align-items: end; margin: 1.5rem 0; }
+.service-controls label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+.service-controls input, .service-controls select { padding: 0.5rem; font-size: 1rem; min-width: 200px; }
+#service-count { flex-basis: 100%; margin: 0; }
+.accordion-toggle { width: 100%; display: flex; justify-content: space-between; align-items: center;
+  background: none; border: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; padding: 0; }
+.accordion-toggle:focus-visible { outline: 3px solid #f5a800; outline-offset: 3px; }
+.accordion-icon { font-size: 1.5rem; line-height: 1; margin-left: 1rem; }
+.accordion-panel { animation: panelFade 0.3s ease; }
+.service-price { font-weight: 600; }
+.no-results { padding: 1rem 0; }
+@keyframes panelFade { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
