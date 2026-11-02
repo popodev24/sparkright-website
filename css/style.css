@@ -473,3 +473,6 @@ footer a {
         text-align: center;
     }
 }
+
+/* Responsive images: keep aspect ratio with width/height attributes (Part 3) */
+img { max-width: 100%; height: auto; display: block; }

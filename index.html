@@ -34,7 +34,15 @@
 
         <!-- Hero section: main call-to-action for the homepage -->
         <section class="hero">
-            <img src="images/hero-electrician.jpg" alt="Qualified SparkRight electrician working on a residential switchboard">
+            <img src="images/hero-electrician.jpg"
+     srcset="images/hero-electrician-480.jpg 480w,
+             images/hero-electrician-800.jpg 800w,
+             images/hero-electrician-1200.jpg 1200w,
+             images/hero-electrician.jpg 6000w"
+     sizes="(max-width: 768px) 100vw, 50vw"
+     width="6000" height="4000"
+     alt="Qualified SparkRight electrician working on a residential switchboard"
+     fetchpriority="high">
             <div class="hero-text">
                 <h2>Safe, Reliable Electrical Work You Can Trust</h2>
                 <p>Wiring, fault-finding and Certificate of Compliance (CoC) services for homes and small businesses across Johannesburg.</p>
